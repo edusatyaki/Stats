@@ -77,41 +77,31 @@ html, body {
   z-index: 0;
 }
 
-/* ─── CHAPTER TAG ─── */
+/* ─── CHAPTER TAG & NUMBER ─── */
 .chapter-tag {
   position: absolute; top: 28px; right: 32px;
   font-size: 10px; font-weight: 500; letter-spacing: 0.15em;
   text-transform: uppercase; color: rgba(13,13,13,0.35);
   z-index: 10;
 }
-
-/* ─── SLIDE NUMBER ─── */
 .slide-num {
   position: absolute; bottom: 22px; right: 32px;
   font-family: 'DM Mono', monospace;
   font-size: 11px; color: rgba(13,13,13,0.25);
   z-index: 10;
 }
-
-/* ─── ACCENT BAR ─── */
 .accent-bar {
   width: 5px; height: 100%;
   position: absolute; left: 0; top: 0;
   z-index: 10;
 }
-
-/* ─── CONTENT AREA ─── */
 .slide-content {
   position: relative; z-index: 5;
-  flex: 1;
-  display: flex;
+  flex: 1; display: flex;
 }
 
 /* ─── TITLE SLIDE ─── */
-#slide-0 {
-  background: var(--ink);
-  color: var(--paper);
-}
+#slide-0 { background: var(--ink); color: var(--paper); }
 #slide-0::before {
   background-image:
     linear-gradient(rgba(250,248,243,0.04) 1px, transparent 1px),
@@ -120,164 +110,119 @@ html, body {
 #slide-0 .chapter-tag { color: rgba(250,248,243,0.3); }
 
 .title-content {
-  flex: 1;
-  display: flex; flex-direction: column;
+  flex: 1; display: flex; flex-direction: column;
   justify-content: center; padding: 70px 80px;
   position: relative; z-index: 5;
 }
 .title-eyebrow {
   font-size: 11px; font-weight: 500; letter-spacing: 0.2em;
-  text-transform: uppercase; color: var(--accent1);
-  margin-bottom: 18px;
+  text-transform: uppercase; color: var(--accent1); margin-bottom: 18px;
 }
 .title-main {
   font-family: 'Playfair Display', serif;
   font-size: 78px; font-weight: 900; line-height: 0.9;
-  letter-spacing: -2px;
-  color: var(--paper);
+  letter-spacing: -2px; color: var(--paper);
 }
-.title-main em {
-  font-style: italic; color: var(--accent4);
-}
+.title-main em { font-style: italic; color: var(--accent4); }
 .title-sub {
   margin-top: 28px; font-size: 16px; font-weight: 300;
   color: rgba(250,248,243,0.55); max-width: 440px; line-height: 1.6;
 }
 .title-chapters {
-  margin-top: 44px;
-  display: flex; gap: 10px; flex-wrap: wrap;
+  margin-top: 44px; display: flex; gap: 10px; flex-wrap: wrap;
 }
 .ch-pill {
   padding: 5px 14px; border-radius: 2px;
   font-size: 11px; font-weight: 500; letter-spacing: 0.08em;
-  cursor: pointer; transition: all 0.2s;
-  border: 1px solid;
+  cursor: pointer; transition: all 0.2s; border: 1px solid;
 }
 .ch-pill:hover { transform: translateY(-2px); filter: brightness(1.1); }
-
 .title-deco {
   position: absolute; right: 60px; top: 50%;
-  transform: translateY(-50%);
-  font-size: 240px; font-family: 'Playfair Display', serif;
+  transform: translateY(-50%); font-size: 240px; font-family: 'Playfair Display', serif;
   font-weight: 900; color: rgba(250,248,243,0.03);
   line-height: 1; letter-spacing: -10px; user-select: none;
 }
 
 /* ─── CHAPTER HEADER SLIDE ─── */
-.ch-header-slide .slide-content {
-  align-items: stretch;
-}
+.ch-header-slide .slide-content { align-items: stretch; }
 .ch-header-left {
-  width: 380px; flex-shrink: 0;
-  padding: 60px 50px;
+  width: 440px; flex-shrink: 0; padding: 60px 50px;
   display: flex; flex-direction: column; justify-content: center;
   position: relative;
 }
 .ch-num-big {
-  font-family: 'Playfair Display', serif;
-  font-size: 120px; font-weight: 900;
-  line-height: 1; letter-spacing: -4px;
-  opacity: 0.07; position: absolute;
+  font-family: 'Playfair Display', serif; font-size: 120px; font-weight: 900;
+  line-height: 1; letter-spacing: -4px; opacity: 0.07; position: absolute;
   top: 30px; left: 30px;
 }
 .ch-eyebrow {
   font-size: 10px; font-weight: 500; letter-spacing: 0.2em;
-  text-transform: uppercase; margin-bottom: 14px;
-  opacity: 0.5;
+  text-transform: uppercase; margin-bottom: 14px; opacity: 0.5;
 }
 .ch-title {
-  font-family: 'Playfair Display', serif;
-  font-size: 42px; font-weight: 700; line-height: 1.1;
-  margin-bottom: 20px;
+  font-family: 'Playfair Display', serif; font-size: 42px; font-weight: 700;
+  line-height: 1.1; margin-bottom: 20px;
 }
-.ch-desc {
-  font-size: 14px; line-height: 1.7; opacity: 0.65;
-}
+.ch-desc { font-size: 14px; line-height: 1.7; opacity: 0.65; }
 .ch-key-concepts {
-  margin-top: 28px;
-  display: flex; flex-direction: column; gap: 8px;
+  margin-top: 28px; display: flex; flex-direction: column; gap: 16px;
 }
-.kc-item {
-  display: flex; align-items: center; gap: 10px;
-  font-size: 13px;
-}
-.kc-dot {
-  width: 6px; height: 6px; border-radius: 50%; flex-shrink: 0;
-}
+.kc-item-wrap { display: flex; flex-direction: column; gap: 4px; }
+.kc-item { display: flex; align-items: center; gap: 10px; font-size: 13px; font-weight: 600; }
+.kc-dot { width: 6px; height: 6px; border-radius: 50%; flex-shrink: 0; }
+.kc-detail { font-size: 11.5px; opacity: 0.7; padding-left: 16px; line-height: 1.4; }
 
 .ch-header-right {
-  flex: 1;
-  display: flex; align-items: center; justify-content: center;
-  padding: 30px;
-  position: relative;
+  flex: 1; display: flex; align-items: center; justify-content: center;
+  padding: 30px; position: relative;
 }
 
 /* ─── CONTENT SLIDE ─── */
-.content-slide .slide-content {
-  flex-direction: column;
-}
-.slide-header {
-  padding: 40px 52px 0;
-  flex-shrink: 0;
-}
+.content-slide .slide-content { flex-direction: column; }
+.slide-header { padding: 40px 52px 0; flex-shrink: 0; }
 .slide-eyebrow {
   font-size: 10px; letter-spacing: 0.18em; text-transform: uppercase;
   font-weight: 500; opacity: 0.4; margin-bottom: 6px;
 }
 .slide-title {
-  font-family: 'Playfair Display', serif;
-  font-size: 34px; font-weight: 700; line-height: 1.15;
+  font-family: 'Playfair Display', serif; font-size: 34px; font-weight: 700; line-height: 1.15;
 }
 .slide-body {
-  flex: 1; display: flex;
-  padding: 24px 52px 40px;
-  gap: 36px;
+  flex: 1; display: flex; padding: 24px 52px 40px; gap: 36px;
 }
 .slide-text-col {
-  width: 300px; flex-shrink: 0;
-  display: flex; flex-direction: column; justify-content: center;
+  width: 320px; flex-shrink: 0; display: flex; flex-direction: column; justify-content: center;
 }
 .concept-box {
-  padding: 18px 20px; margin-bottom: 16px;
-  border-left: 3px solid;
+  padding: 18px 20px; margin-bottom: 16px; border-left: 3px solid;
 }
 .concept-box .label {
   font-size: 9px; letter-spacing: 0.15em; text-transform: uppercase;
   font-weight: 600; margin-bottom: 6px; opacity: 0.5;
 }
-.concept-box .formula {
-  font-family: 'DM Mono', monospace;
-  font-size: 16px; font-weight: 500;
-}
-.concept-box .desc {
-  font-size: 12px; line-height: 1.6; opacity: 0.65; margin-top: 6px;
-}
+.concept-box .formula { font-family: 'DM Mono', monospace; font-size: 15px; font-weight: 500; }
+.concept-box .desc { font-size: 12px; line-height: 1.6; opacity: 0.75; margin-top: 6px; }
 .example-box {
-  background: rgba(13,13,13,0.04);
-  border-radius: 3px; padding: 16px 18px; margin-top: 10px;
+  background: rgba(13,13,13,0.04); border-radius: 3px; padding: 16px 18px; margin-top: 10px;
 }
 .example-box .ex-label {
   font-size: 9px; letter-spacing: 0.15em; text-transform: uppercase;
   font-weight: 600; margin-bottom: 8px; opacity: 0.45;
 }
-.example-box p {
-  font-size: 12px; line-height: 1.7; opacity: 0.7;
-}
+.example-box p { font-size: 12px; line-height: 1.7; opacity: 0.8; }
 
 .viz-col {
-  flex: 1;
-  display: flex; flex-direction: column; align-items: center; justify-content: center;
+  flex: 1; display: flex; flex-direction: column; align-items: center; justify-content: center;
   position: relative;
 }
 
 /* ─── BUTTONS ─── */
 .btn {
   display: inline-flex; align-items: center; justify-content: center;
-  padding: 9px 20px; border-radius: 2px;
-  font-family: 'DM Sans', sans-serif;
+  padding: 9px 20px; border-radius: 2px; font-family: 'DM Sans', sans-serif;
   font-size: 12px; font-weight: 500; letter-spacing: 0.05em;
-  cursor: pointer; border: none; transition: all 0.2s;
-  user-select: none;
+  cursor: pointer; border: none; transition: all 0.2s; user-select: none;
 }
 .btn:hover { filter: brightness(0.88); transform: translateY(-1px); }
 .btn:active { transform: translateY(0); }
@@ -288,45 +233,45 @@ html, body {
   position: fixed; bottom: 28px; left: 50%; transform: translateX(-50%);
   display: flex; align-items: center; gap: 16px;
   background: rgba(250,248,243,0.12); backdrop-filter: blur(12px);
-  border: 1px solid rgba(255,255,255,0.12);
-  border-radius: 40px; padding: 10px 24px;
+  border: 1px solid rgba(255,255,255,0.12); border-radius: 40px; padding: 10px 24px;
   z-index: 100;
 }
 .nav-btn {
-  background: none; border: none; cursor: pointer;
-  color: rgba(255,255,255,0.7); font-size: 18px;
-  width: 36px; height: 36px; border-radius: 50%;
-  display: flex; align-items: center; justify-content: center;
-  transition: all 0.2s;
+  background: none; border: none; cursor: pointer; color: rgba(255,255,255,0.7);
+  font-size: 18px; width: 36px; height: 36px; border-radius: 50%;
+  display: flex; align-items: center; justify-content: center; transition: all 0.2s;
 }
 .nav-btn:hover { background: rgba(255,255,255,0.12); color: white; }
 .nav-btn:disabled { opacity: 0.25; cursor: not-allowed; }
 #slide-counter {
-  font-family: 'DM Mono', monospace;
-  font-size: 12px; color: rgba(255,255,255,0.55);
+  font-family: 'DM Mono', monospace; font-size: 12px; color: rgba(255,255,255,0.55);
   min-width: 50px; text-align: center;
 }
 .nav-dots { display: flex; gap: 5px; }
 .nav-dot {
-  width: 6px; height: 6px; border-radius: 50%;
-  background: rgba(255,255,255,0.25); cursor: pointer;
-  transition: all 0.2s;
+  width: 6px; height: 6px; border-radius: 50%; background: rgba(255,255,255,0.25);
+  cursor: pointer; transition: all 0.2s;
 }
 .nav-dot.active { background: white; transform: scale(1.3); }
+
+/* Custom Dropdown */
+#chapter-select {
+  background: rgba(255,255,255,0.1); color: white;
+  border: 1px solid rgba(255,255,255,0.2); border-radius: 20px;
+  padding: 4px 12px; font-family: 'DM Sans', sans-serif; font-size: 12px;
+  cursor: pointer; outline: none; margin-left: 10px;
+}
+#chapter-select option { color: #000; }
 
 /* ─── SVG GENERAL ─── */
 svg text { font-family: 'DM Sans', sans-serif; }
 
 /* ─── STAT CARD ─── */
 .stat-card {
-  background: white; border-radius: 3px;
-  padding: 18px 22px; box-shadow: 0 2px 16px rgba(0,0,0,0.07);
-  margin-bottom: 10px;
+  background: white; border-radius: 3px; padding: 18px 22px;
+  box-shadow: 0 2px 16px rgba(0,0,0,0.07); margin-bottom: 10px;
 }
-.stat-val {
-  font-family: 'DM Mono', monospace;
-  font-size: 28px; font-weight: 500;
-}
+.stat-val { font-family: 'DM Mono', monospace; font-size: 28px; font-weight: 500; }
 .stat-label { font-size: 11px; opacity: 0.5; margin-top: 2px; }
 
 /* ─── PROGRESS BAR ─── */
@@ -334,16 +279,10 @@ svg text { font-family: 'DM Sans', sans-serif; }
   position: fixed; top: 0; left: 0; right: 0; height: 3px;
   background: rgba(255,255,255,0.08); z-index: 200;
 }
-#progress-fill {
-  height: 100%; background: var(--accent1);
-  transition: width 0.35s ease;
-}
+#progress-fill { height: 100%; background: var(--accent1); transition: width 0.35s ease; }
 
 /* ─── ANIMATIONS ─── */
-@keyframes fadeUp {
-  from { opacity: 0; transform: translateY(18px); }
-  to { opacity: 1; transform: translateY(0); }
-}
+@keyframes fadeUp { from { opacity: 0; transform: translateY(18px); } to { opacity: 1; transform: translateY(0); } }
 .fade-up { animation: fadeUp 0.5s ease both; }
 .fade-up-1 { animation-delay: 0.1s; }
 .fade-up-2 { animation-delay: 0.22s; }
@@ -352,71 +291,30 @@ svg text { font-family: 'DM Sans', sans-serif; }
 
 /* ─── COIN ─── */
 .coin-el {
-  width: 72px; height: 72px; border-radius: 50%;
-  display: flex; align-items: center; justify-content: center;
-  font-size: 32px; cursor: pointer;
-  box-shadow: 0 4px 18px rgba(0,0,0,0.15);
-  transition: transform 0.15s;
-  user-select: none;
+  width: 72px; height: 72px; border-radius: 50%; display: flex; align-items: center; justify-content: center;
+  font-size: 32px; cursor: pointer; box-shadow: 0 4px 18px rgba(0,0,0,0.15);
+  transition: transform 0.15s; user-select: none;
 }
 .coin-el:hover { transform: scale(1.06); }
 .coin-el.flip-anim { animation: coinFlip 0.35s ease; }
-@keyframes coinFlip {
-  0% { transform: rotateY(0); }
-  50% { transform: rotateY(90deg) scale(0.8); }
-  100% { transform: rotateY(0); }
-}
-
-/* ─── VENN ─── */
-.venn-circle {
-  fill-opacity: 0.25; stroke-width: 2; cursor: pointer;
-  transition: fill-opacity 0.2s;
-}
-.venn-circle:hover { fill-opacity: 0.45; }
-.venn-circle.selected { fill-opacity: 0.55; }
+@keyframes coinFlip { 0% { transform: rotateY(0); } 50% { transform: rotateY(90deg) scale(0.8); } 100% { transform: rotateY(0); } }
 
 /* ─── DIST SLIDER ─── */
 .dist-slider {
-  -webkit-appearance: none; appearance: none;
-  width: 100%; height: 4px; border-radius: 2px;
-  background: rgba(13,13,13,0.15); outline: none;
-  cursor: pointer;
+  -webkit-appearance: none; appearance: none; width: 100%; height: 4px; border-radius: 2px;
+  background: rgba(13,13,13,0.15); outline: none; cursor: pointer;
 }
 .dist-slider::-webkit-slider-thumb {
-  -webkit-appearance: none; appearance: none;
-  width: 16px; height: 16px; border-radius: 50%;
-  cursor: pointer;
+  -webkit-appearance: none; appearance: none; width: 16px; height: 16px; border-radius: 50%;
+  cursor: pointer; background: var(--thumb-color, #333); transition: transform 0.1s;
 }
-.slider-row {
-  display: flex; align-items: center; gap: 12px;
-  margin-bottom: 10px;
-}
+.dist-slider::-webkit-slider-thumb:hover { transform: scale(1.2); }
+.slider-row { display: flex; align-items: center; gap: 12px; margin-bottom: 10px; }
 .slider-label { font-size: 12px; width: 80px; opacity: 0.6; font-family: 'DM Mono', monospace; }
 .slider-val { font-size: 12px; width: 32px; text-align: right; font-family: 'DM Mono', monospace; opacity: 0.7; }
 
-/* ─── TABLE ─── */
-.styled-table {
-  width: 100%; border-collapse: collapse;
-  font-size: 12px;
-}
-.styled-table th {
-  text-align: left; font-weight: 600; letter-spacing: 0.06em;
-  font-size: 10px; text-transform: uppercase; opacity: 0.45;
-  padding: 6px 10px; border-bottom: 1px solid var(--light-line);
-}
-.styled-table td {
-  padding: 8px 10px; border-bottom: 1px solid rgba(13,13,13,0.04);
-  font-size: 12px;
-}
-.styled-table tr:last-child td { border-bottom: none; }
-
 /* ─── RESPONSIVE SCALE ─── */
-#scale-wrap {
-  width: var(--slide-w);
-  height: var(--slide-h);
-  position: relative;
-  transform-origin: center center;
-}
+#scale-wrap { width: var(--slide-w); height: var(--slide-h); position: relative; transform-origin: center center; }
 </style>
 </head>
 <body>
@@ -426,9 +324,6 @@ svg text { font-family: 'DM Sans', sans-serif; }
 <div id="deck">
 <div id="scale-wrap">
 
-<!-- ════════════════════════════════════════════════════ -->
-<!-- SLIDE 0 — TITLE -->
-<!-- ════════════════════════════════════════════════════ -->
 <div class="slide active" id="slide-0">
   <div class="title-deco">∑π</div>
   <div class="title-content">
@@ -437,19 +332,16 @@ svg text { font-family: 'DM Sans', sans-serif; }
     <div class="title-sub fade-up fade-up-2">Six chapters. Six big ideas. Visualized live — no equations without intuition.</div>
     <div class="title-chapters fade-up fade-up-3">
       <span class="ch-pill" style="color:#c8472b;border-color:#c8472b22;background:rgba(200,71,43,0.1)" onclick="goTo(1)">1 · Basic Probability</span>
-      <span class="ch-pill" style="color:#2563a8;border-color:#2563a822;background:rgba(37,99,168,0.1)" onclick="goTo(3)">2 · Compound Probability</span>
+      <span class="ch-pill" style="color:#2563a8;border-color:#2563a822;background:rgba(37,99,168,0.1)" onclick="goTo(3)">2 · Compound Prob.</span>
       <span class="ch-pill" style="color:#1a8a5a;border-color:#1a8a5a22;background:rgba(26,138,90,0.1)" onclick="goTo(5)">3 · Distributions</span>
-      <span class="ch-pill" style="color:#d4820a;border-color:#d4820a22;background:rgba(212,130,10,0.1)" onclick="goTo(7)">4 · Frequentist Inference</span>
-      <span class="ch-pill" style="color:#7c3aed;border-color:#7c3aed22;background:rgba(124,58,237,0.1)" onclick="goTo(9)">5 · Bayesian Inference</span>
+      <span class="ch-pill" style="color:#d4820a;border-color:#d4820a22;background:rgba(212,130,10,0.1)" onclick="goTo(7)">4 · Frequentist Inf.</span>
+      <span class="ch-pill" style="color:#7c3aed;border-color:#7c3aed22;background:rgba(124,58,237,0.1)" onclick="goTo(9)">5 · Bayesian Inf.</span>
       <span class="ch-pill" style="color:#0891b2;border-color:#0891b222;background:rgba(8,145,178,0.1)" onclick="goTo(11)">6 · Regression</span>
     </div>
   </div>
   <div class="slide-num">00</div>
 </div>
 
-<!-- ════════════════════════════════════════════════════ -->
-<!-- SLIDE 1 — CH1 HEADER -->
-<!-- ════════════════════════════════════════════════════ -->
 <div class="slide ch-header-slide" id="slide-1">
   <div class="accent-bar" style="background:var(--accent1)"></div>
   <div class="chapter-tag">Chapter 01</div>
@@ -460,44 +352,49 @@ svg text { font-family: 'DM Sans', sans-serif; }
       <div class="ch-title">Basic<br>Probability</div>
       <div class="ch-desc">Quantifying uncertainty. From coin flips to expected values — the mathematics of chance.</div>
       <div class="ch-key-concepts">
-        <div class="kc-item"><div class="kc-dot" style="background:var(--accent1)"></div><span>Chance Events & Sample Spaces</span></div>
-        <div class="kc-item"><div class="kc-dot" style="background:var(--accent1)"></div><span>Expected Value</span></div>
-        <div class="kc-item"><div class="kc-dot" style="background:var(--accent1)"></div><span>Variance & Spread</span></div>
+        <div class="kc-item-wrap">
+          <div class="kc-item"><div class="kc-dot" style="background:var(--accent1)"></div><span>Chance Events & Sample Spaces</span></div>
+          <div class="kc-detail">The "Sample Space" is simply the list of all possible things that can happen. For a coin, it's just {Heads, Tails}.</div>
+        </div>
+        <div class="kc-item-wrap">
+          <div class="kc-item"><div class="kc-dot" style="background:var(--accent1)"></div><span>Expected Value</span></div>
+          <div class="kc-detail">If you repeat an experiment forever, what is the average outcome? It's the "long-run" mathematical expectation.</div>
+        </div>
+        <div class="kc-item-wrap">
+          <div class="kc-item"><div class="kc-dot" style="background:var(--accent1)"></div><span>Variance & Spread</span></div>
+          <div class="kc-detail">How wild are the swings? Variance measures how far outcomes typically stray from the Expected Value.</div>
+        </div>
       </div>
     </div>
-    <div class="ch-header-right" id="ch1-dice-preview">
-      <!-- D3 dice preview rendered here -->
-    </div>
+    <div class="ch-header-right" id="ch1-dice-preview"></div>
   </div>
   <div class="slide-num">01</div>
 </div>
 
-<!-- ════════════════════════════════════════════════════ -->
-<!-- SLIDE 2 — COIN FLIP + EXPECTATION -->
-<!-- ════════════════════════════════════════════════════ -->
 <div class="slide content-slide" id="slide-2">
   <div class="accent-bar" style="background:var(--accent1)"></div>
   <div class="chapter-tag">Chapter 01 · Basic Probability</div>
   <div class="slide-content">
     <div class="slide-header">
       <div class="slide-eyebrow" style="color:var(--accent1)">Chance Events</div>
-      <div class="slide-title">The Coin Flip — Where Probability Begins</div>
+      <div class="slide-title">Story 1: The Gambler’s Fallacy</div>
     </div>
     <div class="slide-body">
       <div class="slide-text-col">
         <div class="concept-box fade-up" style="border-color:var(--accent1);background:rgba(200,71,43,0.04)">
-          <div class="label">Definition</div>
-          <div class="formula">P(H) + P(T) = 1</div>
-          <div class="desc">All outcomes sum to 1. Probability lives in [0, 1].</div>
+          <div class="label">Theory</div>
+          <div class="formula">P(H) = P(T) = 0.5</div>
+          <div class="desc">A fair coin has a 50% chance for Heads or Tails. Short term results vary, but long term results converge to 50%.</div>
         </div>
         <div class="example-box fade-up fade-up-1">
-          <div class="ex-label">Real-world example</div>
-          <p>A weather forecaster says <strong>70% chance of rain</strong>. That's probability. Flip enough coins and the observed frequency converges to the true probability — the <em>Law of Large Numbers</em>.</p>
+          <div class="ex-label">The Story: Lucky Louie</div>
+          <p>Imagine a gambler named 'Lucky Louie'. He flips a coin 5 times, and it lands Heads every single time. Louie is convinced that Tails is "due." He bets his entire stack on Tails, believing the next outcome must correct the streak.</p>
+          <p style="margin-top:8px">This is the <strong>Gambler's Fallacy</strong>. Watch the data stabilize over many flips. Does Louie have a valid strategy?</p>
         </div>
         <div class="btn-group fade-up fade-up-2">
           <button class="btn" id="flip-once" style="background:var(--accent1);color:white">Flip Once</button>
           <button class="btn" id="flip-100" style="background:rgba(200,71,43,0.1);color:var(--accent1);border:1px solid var(--accent1)">Flip × 100</button>
-          <button class="btn" id="flip-reset" style="background:rgba(13,13,13,0.07);color:var(--ink)">Reset</button>
+          <button class="btn" id="flip-reset" style="background:rgba(13,13,13,0.07);color:var(--ink)">Reset Louie</button>
         </div>
       </div>
       <div class="viz-col">
@@ -521,9 +418,6 @@ svg text { font-family: 'DM Sans', sans-serif; }
   <div class="slide-num">02</div>
 </div>
 
-<!-- ════════════════════════════════════════════════════ -->
-<!-- SLIDE 3 — CH2 HEADER -->
-<!-- ════════════════════════════════════════════════════ -->
 <div class="slide ch-header-slide" id="slide-3">
   <div class="accent-bar" style="background:var(--accent2)"></div>
   <div class="chapter-tag">Chapter 02</div>
@@ -534,9 +428,18 @@ svg text { font-family: 'DM Sans', sans-serif; }
       <div class="ch-title">Compound<br>Probability</div>
       <div class="ch-desc">Combining events. When probabilities overlap, intersect, or condition on each other.</div>
       <div class="ch-key-concepts">
-        <div class="kc-item"><div class="kc-dot" style="background:var(--accent2)"></div><span>Set Theory & Venn Diagrams</span></div>
-        <div class="kc-item"><div class="kc-dot" style="background:var(--accent2)"></div><span>Counting & Combinatorics</span></div>
-        <div class="kc-item"><div class="kc-dot" style="background:var(--accent2)"></div><span>Conditional Probability</span></div>
+        <div class="kc-item-wrap">
+          <div class="kc-item"><div class="kc-dot" style="background:var(--accent2)"></div><span>Set Theory & Venn Diagrams</span></div>
+          <div class="kc-detail">Visualizing relationships. The "Intersection" is where events overlap; "Union" is the total combined area.</div>
+        </div>
+        <div class="kc-item-wrap">
+          <div class="kc-item"><div class="kc-dot" style="background:var(--accent2)"></div><span>Combinatorics</span></div>
+          <div class="kc-detail">The mathematics of counting. How many ways can you arrange a deck of cards? (Spoiler: 52!)</div>
+        </div>
+        <div class="kc-item-wrap">
+          <div class="kc-item"><div class="kc-dot" style="background:var(--accent2)"></div><span>Conditional Probability</span></div>
+          <div class="kc-detail">Probability that updates based on new evidence. How likely is rain *given* that it is cloudy?</div>
+        </div>
       </div>
     </div>
     <div class="ch-header-right" id="ch2-venn-preview"></div>
@@ -544,30 +447,28 @@ svg text { font-family: 'DM Sans', sans-serif; }
   <div class="slide-num">03</div>
 </div>
 
-<!-- ════════════════════════════════════════════════════ -->
-<!-- SLIDE 4 — CONDITIONAL PROBABILITY -->
-<!-- ════════════════════════════════════════════════════ -->
 <div class="slide content-slide" id="slide-4">
   <div class="accent-bar" style="background:var(--accent2)"></div>
   <div class="chapter-tag">Chapter 02 · Compound Probability</div>
   <div class="slide-content">
     <div class="slide-header">
-      <div class="slide-eyebrow" style="color:var(--accent2)">Conditional Probability</div>
-      <div class="slide-title">P(A|B) — Probability Given New Information</div>
+      <div class="slide-eyebrow" style="color:var(--accent2)">Set Theory</div>
+      <div class="slide-title">Story 2: Streaming Overlaps</div>
     </div>
     <div class="slide-body">
       <div class="slide-text-col">
         <div class="concept-box fade-up" style="border-color:var(--accent2);background:rgba(37,99,168,0.04)">
-          <div class="label">Formula</div>
-          <div class="formula">P(A|B) = P(A∩B) / P(B)</div>
-          <div class="desc">The probability of A, given that B has occurred. Restricts the sample space to B.</div>
+          <div class="label">Intersection Formula</div>
+          <div class="formula">P(A ∩ B)</div>
+          <div class="desc">The probability of A AND B. In the diagram, it's where the circles physically overlap.</div>
         </div>
         <div class="example-box fade-up fade-up-1">
-          <div class="ex-label">Medical Test Example</div>
-          <p>Disease prevalence: <strong>1%</strong>. Test accuracy: <strong>99%</strong> (sensitivity &amp; specificity). If you test positive, what's the probability you actually have the disease?<br><br><strong>Answer: ~50%</strong> — not 99%! Bayes' Theorem reveals the truth.</p>
+          <div class="ex-label">The Scenario</div>
+          <p>A marketing firm, 'Cord-Cutters Inc.', is analyzing consumer data. They want to find specific niche segments for targeting. A is <strong>Netflix</strong> users, B is <strong>Hulu</strong> users, and C is <strong>Prime</strong>.</p>
+          <p style="margin-top:8px">The region P(A∩B∩C) represents the 'Target Group: Super-users who have all three.' Clicking that region isolates that demographic for targeting.</p>
         </div>
         <div style="margin-top:14px" class="fade-up fade-up-2">
-          <div style="font-size:11px;opacity:0.5;margin-bottom:8px;letter-spacing:0.1em;text-transform:uppercase">Click regions to highlight</div>
+          <div style="font-size:11px;opacity:0.5;margin-bottom:8px;letter-spacing:0.1em;text-transform:uppercase">Click regions to highlight demographics</div>
           <div style="display:flex;gap:6px;flex-wrap:wrap" id="venn-btns"></div>
         </div>
       </div>
@@ -579,9 +480,6 @@ svg text { font-family: 'DM Sans', sans-serif; }
   <div class="slide-num">04</div>
 </div>
 
-<!-- ════════════════════════════════════════════════════ -->
-<!-- SLIDE 5 — CH3 HEADER -->
-<!-- ════════════════════════════════════════════════════ -->
 <div class="slide ch-header-slide" id="slide-5">
   <div class="accent-bar" style="background:var(--accent3)"></div>
   <div class="chapter-tag">Chapter 03</div>
@@ -592,9 +490,18 @@ svg text { font-family: 'DM Sans', sans-serif; }
       <div class="ch-title">Probability<br>Distributions</div>
       <div class="ch-desc">From individual outcomes to the shape of randomness. The famous bell curve and its siblings.</div>
       <div class="ch-key-concepts">
-        <div class="kc-item"><div class="kc-dot" style="background:var(--accent3)"></div><span>Random Variables</span></div>
-        <div class="kc-item"><div class="kc-dot" style="background:var(--accent3)"></div><span>Discrete vs. Continuous</span></div>
-        <div class="kc-item"><div class="kc-dot" style="background:var(--accent3)"></div><span>Central Limit Theorem</span></div>
+        <div class="kc-item-wrap">
+          <div class="kc-item"><div class="kc-dot" style="background:var(--accent3)"></div><span>Random Variables</span></div>
+          <div class="kc-detail">A variable whose value depends on a random event, like the sum of two rolled dice.</div>
+        </div>
+        <div class="kc-item-wrap">
+          <div class="kc-item"><div class="kc-dot" style="background:var(--accent3)"></div><span>Discrete vs. Continuous</span></div>
+          <div class="kc-detail">Discrete: things you can count (shoes). Continuous: things you measure (temperature, height).</div>
+        </div>
+        <div class="kc-item-wrap">
+          <div class="kc-item"><div class="kc-dot" style="background:var(--accent3)"></div><span>Central Limit Theorem</span></div>
+          <div class="kc-detail">The magic rule: If you add up enough random things, their average will always form a Normal "Bell" curve!</div>
+        </div>
       </div>
     </div>
     <div class="ch-header-right" id="ch3-dist-preview"></div>
@@ -602,38 +509,36 @@ svg text { font-family: 'DM Sans', sans-serif; }
   <div class="slide-num">05</div>
 </div>
 
-<!-- ════════════════════════════════════════════════════ -->
-<!-- SLIDE 6 — DISTRIBUTIONS INTERACTIVE -->
-<!-- ════════════════════════════════════════════════════ -->
 <div class="slide content-slide" id="slide-6">
   <div class="accent-bar" style="background:var(--accent3)"></div>
   <div class="chapter-tag">Chapter 03 · Probability Distributions</div>
   <div class="slide-content">
     <div class="slide-header">
       <div class="slide-eyebrow" style="color:var(--accent3)">Normal Distribution</div>
-      <div class="slide-title">The Bell Curve — Shape of Natural Randomness</div>
+      <div class="slide-title">Story 3: QC on the Production Line</div>
     </div>
     <div class="slide-body">
       <div class="slide-text-col">
         <div class="concept-box fade-up" style="border-color:var(--accent3);background:rgba(26,138,90,0.04)">
           <div class="label">Parameters</div>
           <div class="formula">N(μ, σ²)</div>
-          <div class="desc">μ shifts the center. σ controls the spread. 68% of data falls within ±1σ.</div>
+          <div class="desc"><strong>μ (mean)</strong> shifts the center. <strong>σ (std dev)</strong> controls the spread. A low σ means data is tightly clustered.</div>
         </div>
         <div class="example-box fade-up fade-up-1">
-          <div class="ex-label">Where it appears</div>
-          <p><strong>Human heights</strong>, measurement errors, IQ scores, blood pressure. Any quantity shaped by many independent random factors converges to normal — the Central Limit Theorem.</p>
+          <div class="ex-label">The Story: Food Packing</div>
+          <p>A factory is trying to optimize the weight of cereal boxes. The ideal weight is 30oz (<strong>μ = 30</strong>). The quality control team sets μ to the target.</p>
+          <p style="margin-top:8px">If the packing machine is erratic, the standard deviation is high (<strong>σ = 2</strong>). This models error or 'slop'. Try changing σ to model the effects of machine error on production consistency.</p>
         </div>
         <div style="margin-top:16px" class="fade-up fade-up-2">
           <div class="slider-row">
-            <span class="slider-label">μ (mean)</span>
+            <span class="slider-label">μ (Target)</span>
             <input type="range" class="dist-slider" id="mu-slider" min="-3" max="3" step="0.1" value="0" style="--thumb-color:var(--accent3)">
-            <span class="slider-val" id="mu-val">0</span>
+            <span class="slider-val" id="mu-val">0.0</span>
           </div>
           <div class="slider-row">
-            <span class="slider-label">σ (std dev)</span>
-            <input type="range" class="dist-slider" id="sigma-slider" min="0.3" max="3" step="0.1" value="1">
-            <span class="slider-val" id="sigma-val">1</span>
+            <span class="slider-label">σ (Slop)</span>
+            <input type="range" class="dist-slider" id="sigma-slider" min="0.3" max="3" step="0.1" value="1" style="--thumb-color:var(--accent3)">
+            <span class="slider-val" id="sigma-val">1.0</span>
           </div>
           <div style="margin-top:10px;display:flex;gap:8px;flex-wrap:wrap" id="dist-type-btns">
             <button class="btn dist-type-btn active-dist" data-type="normal" style="background:var(--accent3);color:white;font-size:11px;padding:6px 12px">Normal</button>
@@ -650,9 +555,6 @@ svg text { font-family: 'DM Sans', sans-serif; }
   <div class="slide-num">06</div>
 </div>
 
-<!-- ════════════════════════════════════════════════════ -->
-<!-- SLIDE 7 — CH4 HEADER -->
-<!-- ════════════════════════════════════════════════════ -->
 <div class="slide ch-header-slide" id="slide-7">
   <div class="accent-bar" style="background:var(--accent4)"></div>
   <div class="chapter-tag">Chapter 04</div>
@@ -661,11 +563,20 @@ svg text { font-family: 'DM Sans', sans-serif; }
       <div class="ch-num-big" style="color:var(--accent4)">4</div>
       <div class="ch-eyebrow" style="color:var(--accent4)">Chapter Four</div>
       <div class="ch-title">Frequentist<br>Inference</div>
-      <div class="ch-desc">Drawing conclusions from data. Estimating unknowns and testing hypotheses with confidence.</div>
+      <div class="ch-desc">Drawing conclusions from a sample. Estimating unknowns and testing hypotheses with confidence.</div>
       <div class="ch-key-concepts">
-        <div class="kc-item"><div class="kc-dot" style="background:var(--accent4)"></div><span>Point Estimation</span></div>
-        <div class="kc-item"><div class="kc-dot" style="background:var(--accent4)"></div><span>Confidence Intervals</span></div>
-        <div class="kc-item"><div class="kc-dot" style="background:var(--accent4)"></div><span>Hypothesis Testing</span></div>
+        <div class="kc-item-wrap">
+          <div class="kc-item"><div class="kc-dot" style="background:var(--accent4)"></div><span>Point Estimation</span></div>
+          <div class="kc-detail">Using a sample statistic (like a sample average) to guess the true population parameter.</div>
+        </div>
+        <div class="kc-item-wrap">
+          <div class="kc-item"><div class="kc-dot" style="background:var(--accent4)"></div><span>Confidence Intervals</span></div>
+          <div class="kc-detail">A range of values we are fairly sure contains the true unknown value. "Margin of Error."</div>
+        </div>
+        <div class="kc-item-wrap">
+          <div class="kc-item"><div class="kc-dot" style="background:var(--accent4)"></div><span>Hypothesis Testing</span></div>
+          <div class="kc-detail">Calculating p-values to determine if an effect is real, or just statistical noise/luck.</div>
+        </div>
       </div>
     </div>
     <div class="ch-header-right" id="ch4-ci-preview"></div>
@@ -673,32 +584,30 @@ svg text { font-family: 'DM Sans', sans-serif; }
   <div class="slide-num">07</div>
 </div>
 
-<!-- ════════════════════════════════════════════════════ -->
-<!-- SLIDE 8 — CONFIDENCE INTERVALS -->
-<!-- ════════════════════════════════════════════════════ -->
 <div class="slide content-slide" id="slide-8">
   <div class="accent-bar" style="background:var(--accent4)"></div>
   <div class="chapter-tag">Chapter 04 · Frequentist Inference</div>
   <div class="slide-content">
     <div class="slide-header">
       <div class="slide-eyebrow" style="color:var(--accent4)">Confidence Intervals</div>
-      <div class="slide-title">Estimating a Population Mean — With Uncertainty</div>
+      <div class="slide-title">Story 4: Cafe Spend Estimation</div>
     </div>
     <div class="slide-body">
       <div class="slide-text-col">
         <div class="concept-box fade-up" style="border-color:var(--accent4);background:rgba(212,130,10,0.04)">
           <div class="label">95% CI</div>
           <div class="formula">x̄ ± 1.96 · (σ/√n)</div>
-          <div class="desc">If we repeat this experiment 100 times, ~95 intervals will contain the true μ.</div>
+          <div class="desc">A confidence interval is like throwing a net to catch a fish (the true mean, μ). A 95% CI means if we throw 100 nets, 95 will catch the fish.</div>
         </div>
         <div class="example-box fade-up fade-up-1">
-          <div class="ex-label">Election polling example</div>
-          <p>A poll of 1,000 voters shows 52% support Candidate A. The <strong>95% CI is ±3.1%</strong>. We say: "We estimate 52% support, with a margin of error of 3 points." The true value is likely in [49%, 55%].</p>
+          <div class="ex-label">The Story: Cafe Spend</div>
+          <p>A coffee shop owner at 'Café Caffeine' wants to know the true average customer spending to plan a new menu. They can't survey everyone, so they sample 10 customers.</p>
+          <p style="margin-top:8px">This single sample (1 Net) is just an estimate. However, taking multiple samples (100 Nets) is testing their sampling *method’s* confidence.</p>
         </div>
         <div class="btn-group fade-up fade-up-2">
-          <button class="btn" id="ci-sample-btn" style="background:var(--accent4);color:white">Sample (n=10)</button>
-          <button class="btn" id="ci-many-btn" style="background:rgba(212,130,10,0.1);color:var(--accent4);border:1px solid var(--accent4)">100 Samples</button>
-          <button class="btn" id="ci-reset-btn" style="background:rgba(13,13,13,0.07);color:var(--ink)">Reset</button>
+          <button class="btn" id="ci-sample-btn" style="background:var(--accent4);color:white">Throw 1 Net</button>
+          <button class="btn" id="ci-many-btn" style="background:rgba(212,130,10,0.1);color:var(--accent4);border:1px solid var(--accent4)">Throw 100 Nets</button>
+          <button class="btn" id="ci-reset-btn" style="background:rgba(13,13,13,0.07);color:var(--ink)">Reset Cafe</button>
         </div>
         <div style="margin-top:14px;display:flex;gap:12px">
           <div class="stat-card" style="flex:1;padding:12px 14px">
@@ -707,7 +616,7 @@ svg text { font-family: 'DM Sans', sans-serif; }
           </div>
           <div class="stat-card" style="flex:1;padding:12px 14px">
             <div class="stat-val" id="ci-coverage" style="color:var(--accent3);font-size:22px">—</div>
-            <div class="stat-label">Coverage rate</div>
+            <div class="stat-label">Catch rate</div>
           </div>
         </div>
       </div>
@@ -719,9 +628,6 @@ svg text { font-family: 'DM Sans', sans-serif; }
   <div class="slide-num">08</div>
 </div>
 
-<!-- ════════════════════════════════════════════════════ -->
-<!-- SLIDE 9 — CH5 HEADER -->
-<!-- ════════════════════════════════════════════════════ -->
 <div class="slide ch-header-slide" id="slide-9">
   <div class="accent-bar" style="background:var(--accent5)"></div>
   <div class="chapter-tag">Chapter 05</div>
@@ -730,11 +636,20 @@ svg text { font-family: 'DM Sans', sans-serif; }
       <div class="ch-num-big" style="color:var(--accent5)">5</div>
       <div class="ch-eyebrow" style="color:var(--accent5)">Chapter Five</div>
       <div class="ch-title">Bayesian<br>Inference</div>
-      <div class="ch-desc">Updating beliefs with evidence. Bayes' theorem is a machine for rational learning.</div>
+      <div class="ch-desc">Updating beliefs with evidence. Bayes' theorem is a mathematical machine for rational learning.</div>
       <div class="ch-key-concepts">
-        <div class="kc-item"><div class="kc-dot" style="background:var(--accent5)"></div><span>Bayes' Theorem</span></div>
-        <div class="kc-item"><div class="kc-dot" style="background:var(--accent5)"></div><span>Prior → Posterior</span></div>
-        <div class="kc-item"><div class="kc-dot" style="background:var(--accent5)"></div><span>Likelihood Functions</span></div>
+        <div class="kc-item-wrap">
+          <div class="kc-item"><div class="kc-dot" style="background:var(--accent5)"></div><span>Bayes' Theorem</span></div>
+          <div class="kc-detail">A formula that describes how to update the probabilities of hypotheses when given evidence.</div>
+        </div>
+        <div class="kc-item-wrap">
+          <div class="kc-item"><div class="kc-dot" style="background:var(--accent5)"></div><span>Prior Beliefs</span></div>
+          <div class="kc-detail">What you believe *before* you see the data. A "flat" prior means you think all outcomes are equally likely.</div>
+        </div>
+        <div class="kc-item-wrap">
+          <div class="kc-item"><div class="kc-dot" style="background:var(--accent5)"></div><span>Posterior Updates</span></div>
+          <div class="kc-detail">Your updated belief *after* factoring in the new data. The Prior + Data = Posterior.</div>
+        </div>
       </div>
     </div>
     <div class="ch-header-right" id="ch5-bayes-preview"></div>
@@ -742,48 +657,46 @@ svg text { font-family: 'DM Sans', sans-serif; }
   <div class="slide-num">09</div>
 </div>
 
-<!-- ════════════════════════════════════════════════════ -->
-<!-- SLIDE 10 — BAYES INTERACTIVE -->
-<!-- ════════════════════════════════════════════════════ -->
 <div class="slide content-slide" id="slide-10">
   <div class="accent-bar" style="background:var(--accent5)"></div>
   <div class="chapter-tag">Chapter 05 · Bayesian Inference</div>
   <div class="slide-content">
     <div class="slide-header">
-      <div class="slide-eyebrow" style="color:var(--accent5)">Prior → Likelihood → Posterior</div>
-      <div class="slide-title">Updating Beliefs — Coin Bias Detection</div>
+      <div class="slide-eyebrow" style="color:var(--accent5)">Prior → Data → Posterior</div>
+      <div class="slide-title">Story 5: Catching a Casino Cheat</div>
     </div>
     <div class="slide-body">
       <div class="slide-text-col">
         <div class="concept-box fade-up" style="border-color:var(--accent5);background:rgba(124,58,237,0.04)">
           <div class="label">Bayes' Rule</div>
-          <div class="formula">P(θ|data) ∝ P(data|θ)·P(θ)</div>
-          <div class="desc">Posterior is proportional to likelihood times prior.</div>
+          <div class="formula">P(A|B) ∝ P(B|A)·P(A)</div>
+          <div class="desc">The Posterior is proportional to the Likelihood of the data times your Prior belief.</div>
         </div>
         <div class="example-box fade-up fade-up-1">
-          <div class="ex-label">Biased coin scenario</div>
-          <p>You pick up a coin. It might be fair (p=0.5) or biased. Each flip updates your belief about the true bias. Watch how the <strong>posterior</strong> sharpens with more data — your prior belief fades as evidence accumulates.</p>
+          <div class="ex-label">The Story: Rigged Coin</div>
+          <p>A casino manager suspects a coin is rigged to favor Heads (bias θ). They start testing it.</p>
+          <p style="margin-top:8px">They set a 'True bias' (p) as a hidden parameter. Each flip (gathering data) updates the 'MAP estimate' (best guess) from a 'Prior Belief' to a refined 'Posterior Belief' (purple curve), visually converging on the hidden truth.</p>
         </div>
         <div style="margin-top:12px" class="fade-up fade-up-2">
           <div class="slider-row">
-            <span class="slider-label" style="width:90px">True p(heads)</span>
-            <input type="range" class="dist-slider" id="true-p-slider" min="0.05" max="0.95" step="0.05" value="0.7">
-            <span class="slider-val" id="true-p-val">0.70</span>
+            <span class="slider-label" style="width:90px">True Bias (p)</span>
+            <input type="range" class="dist-slider" id="true-p-slider" min="0.05" max="0.95" step="0.05" value="0.75" style="--thumb-color:var(--accent5)">
+            <span class="slider-val" id="true-p-val">0.75</span>
           </div>
         </div>
         <div class="btn-group fade-up fade-up-3">
-          <button class="btn" id="bayes-flip-1" style="background:var(--accent5);color:white">Flip Once</button>
+          <button class="btn" id="bayes-flip-1" style="background:var(--accent5);color:white">Flip Coin</button>
           <button class="btn" id="bayes-flip-10" style="background:rgba(124,58,237,0.1);color:var(--accent5);border:1px solid var(--accent5)">Flip × 10</button>
-          <button class="btn" id="bayes-reset" style="background:rgba(13,13,13,0.07);color:var(--ink)">Reset</button>
+          <button class="btn" id="bayes-reset" style="background:rgba(13,13,13,0.07);color:var(--ink)">Reset Manager</button>
         </div>
         <div style="margin-top:10px;display:flex;gap:10px">
           <div class="stat-card" style="flex:1;padding:10px 12px">
             <div class="stat-val" id="bayes-n" style="font-size:20px;color:var(--accent5)">0</div>
-            <div class="stat-label">Flips</div>
+            <div class="stat-label">Total Flips</div>
           </div>
           <div class="stat-card" style="flex:1;padding:10px 12px">
             <div class="stat-val" id="bayes-map" style="font-size:20px;color:var(--accent3)">0.50</div>
-            <div class="stat-label">MAP estimate</div>
+            <div class="stat-label">Best Guess</div>
           </div>
         </div>
       </div>
@@ -795,9 +708,6 @@ svg text { font-family: 'DM Sans', sans-serif; }
   <div class="slide-num">10</div>
 </div>
 
-<!-- ════════════════════════════════════════════════════ -->
-<!-- SLIDE 11 — CH6 HEADER -->
-<!-- ════════════════════════════════════════════════════ -->
 <div class="slide ch-header-slide" id="slide-11">
   <div class="accent-bar" style="background:#0891b2"></div>
   <div class="chapter-tag">Chapter 06</div>
@@ -806,11 +716,20 @@ svg text { font-family: 'DM Sans', sans-serif; }
       <div class="ch-num-big" style="color:#0891b2">6</div>
       <div class="ch-eyebrow" style="color:#0891b2">Chapter Six</div>
       <div class="ch-title">Regression<br>Analysis</div>
-      <div class="ch-desc">Modeling relationships. Finding the line that best explains how one variable predicts another.</div>
+      <div class="ch-desc">Modeling relationships. Finding the line of best fit that explains how one variable predicts another.</div>
       <div class="ch-key-concepts">
-        <div class="kc-item"><div class="kc-dot" style="background:#0891b2"></div><span>Ordinary Least Squares</span></div>
-        <div class="kc-item"><div class="kc-dot" style="background:#0891b2"></div><span>Correlation (r)</span></div>
-        <div class="kc-item"><div class="kc-dot" style="background:#0891b2"></div><span>ANOVA</span></div>
+        <div class="kc-item-wrap">
+          <div class="kc-item"><div class="kc-dot" style="background:#0891b2"></div><span>Ordinary Least Squares (OLS)</span></div>
+          <div class="kc-detail">The algorithm that draws the line. It works by minimizing the squared vertical distances from the dots to the line.</div>
+        </div>
+        <div class="kc-item-wrap">
+          <div class="kc-item"><div class="kc-dot" style="background:#0891b2"></div><span>Correlation (r)</span></div>
+          <div class="kc-detail">Measures how tightly the dots cluster around the line. +1 is a perfect positive relationship; 0 is random noise.</div>
+        </div>
+        <div class="kc-item-wrap">
+          <div class="kc-item"><div class="kc-dot" style="background:#0891b2"></div><span>R-Squared (R²)</span></div>
+          <div class="kc-detail">The percentage of the outcome that can be explained by your predictor. (e.g. 80% of test scores are explained by hours studied).</div>
+        </div>
       </div>
     </div>
     <div class="ch-header-right" id="ch6-reg-preview"></div>
@@ -818,27 +737,25 @@ svg text { font-family: 'DM Sans', sans-serif; }
   <div class="slide-num">11</div>
 </div>
 
-<!-- ════════════════════════════════════════════════════ -->
-<!-- SLIDE 12 — REGRESSION INTERACTIVE -->
-<!-- ════════════════════════════════════════════════════ -->
 <div class="slide content-slide" id="slide-12">
   <div class="accent-bar" style="background:#0891b2"></div>
   <div class="chapter-tag">Chapter 06 · Regression Analysis</div>
   <div class="slide-content">
     <div class="slide-header">
       <div class="slide-eyebrow" style="color:#0891b2">Ordinary Least Squares</div>
-      <div class="slide-title">Drag Points — Watch the Regression Line Respond</div>
+      <div class="slide-title">Story 6: Real Estate Pricing</div>
     </div>
     <div class="slide-body">
       <div class="slide-text-col">
         <div class="concept-box fade-up" style="border-color:#0891b2;background:rgba(8,145,178,0.04)">
-          <div class="label">OLS Formula</div>
-          <div class="formula">ŷ = β₀ + β₁x</div>
-          <div class="desc">β₁ = Cov(x,y)/Var(x). Minimizes the sum of squared residuals.</div>
+          <div class="label">Linear Equation</div>
+          <div class="formula">Rent = β₀ + β₁(Sq Ft)</div>
+          <div class="desc"><strong>β₁ (Slope)</strong> tells you how many dollars of rent are added per extra square foot of space.</div>
         </div>
         <div class="example-box fade-up fade-up-1">
-          <div class="ex-label">House price example</div>
-          <p>Predicting <strong>house price</strong> from square footage. Each extra sq ft adds β₁ dollars. The intercept β₀ is the baseline cost. R² tells us how much of the price variation is explained by size alone.</p>
+          <div class="ex-label">The Scenario</div>
+          <p>A housing analyst is modeling rent price as a function of square footage. This establishes the value of space.</p>
+          <p style="margin-top:8px">Students can 'Add Apartment' and drag points to model this relationship, watching R², Correlation (r), Slope (β₁), and Intercept (β₀) update to predict rent from space in a cohesive market story.</p>
         </div>
         <div style="margin-top:14px;display:grid;grid-template-columns:1fr 1fr;gap:8px" class="fade-up fade-up-2">
           <div class="stat-card" style="padding:10px 14px">
@@ -846,21 +763,21 @@ svg text { font-family: 'DM Sans', sans-serif; }
             <div class="stat-label">R² (fit quality)</div>
           </div>
           <div class="stat-card" style="padding:10px 14px">
+            <div class="stat-val" id="reg-corr" style="color:var(--accent5);font-size:20px">—</div>
+            <div class="stat-label">Correlation r</div>
+          </div>
+          <div class="stat-card" style="padding:10px 14px">
             <div class="stat-val" id="reg-slope" style="color:var(--accent3);font-size:20px">—</div>
             <div class="stat-label">Slope β₁</div>
           </div>
           <div class="stat-card" style="padding:10px 14px">
             <div class="stat-val" id="reg-inter" style="color:var(--accent4);font-size:20px">—</div>
-            <div class="stat-label">Intercept β₀</div>
-          </div>
-          <div class="stat-card" style="padding:10px 14px">
-            <div class="stat-val" id="reg-corr" style="color:var(--accent5);font-size:20px">—</div>
-            <div class="stat-label">Correlation r</div>
+            <div class="stat-label">Base Rent β₀</div>
           </div>
         </div>
         <div class="btn-group fade-up fade-up-3">
-          <button class="btn" id="reg-add-point" style="background:#0891b2;color:white;font-size:11px">Add Point</button>
-          <button class="btn" id="reg-reset" style="background:rgba(13,13,13,0.07);color:var(--ink);font-size:11px">Reset</button>
+          <button class="btn" id="reg-add-point" style="background:#0891b2;color:white;font-size:11px">Add Apartment</button>
+          <button class="btn" id="reg-reset" style="background:rgba(13,13,13,0.07);color:var(--ink);font-size:11px">Reset Market</button>
         </div>
       </div>
       <div class="viz-col">
@@ -871,9 +788,6 @@ svg text { font-family: 'DM Sans', sans-serif; }
   <div class="slide-num">12</div>
 </div>
 
-<!-- ════════════════════════════════════════════════════ -->
-<!-- SLIDE 13 — SUMMARY -->
-<!-- ════════════════════════════════════════════════════ -->
 <div class="slide" id="slide-13" style="background:var(--ink)">
   <div class="slide-content" style="flex-direction:column;align-items:center;justify-content:center;padding:60px;z-index:5;position:relative">
     <div style="font-size:10px;letter-spacing:0.2em;text-transform:uppercase;color:rgba(250,248,243,0.4);margin-bottom:20px" class="fade-up">The Six Big Ideas</div>
@@ -914,21 +828,29 @@ svg text { font-family: 'DM Sans', sans-serif; }
   <div class="slide-num" style="color:rgba(250,248,243,0.2)">13</div>
 </div>
 
-</div><!-- /scale-wrap -->
-</div><!-- /deck -->
+</div>
+</div>
 
-<!-- ─── NAVIGATION ─── -->
 <nav id="nav">
   <button class="nav-btn" id="prev-btn" onclick="prevSlide()" disabled>←</button>
   <div class="nav-dots" id="nav-dots"></div>
   <span id="slide-counter">1 / 14</span>
   <button class="nav-btn" id="next-btn" onclick="nextSlide()">→</button>
+  
+  <select id="chapter-select" onchange="goTo(parseInt(this.value))">
+    <option value="0">Intro</option>
+    <option value="1">Story 1: The Gambler</option>
+    <option value="3">Story 2: Streaming Wars</option>
+    <option value="5">Story 3: QC Line</option>
+    <option value="7">Story 4: Cafe Spend</option>
+    <option value="9">Story 5: Rigged Coin</option>
+    <option value="11">Story 6: Market Pricing</option>
+    <option value="13">Summary</option>
+  </select>
 </nav>
 
 <script>
-// ════════════════════════════════════════════════════════
 // SLIDE ENGINE
-// ════════════════════════════════════════════════════════
 const TOTAL = 14;
 let current = 0;
 const initialized = {};
@@ -949,6 +871,17 @@ function updateNav() {
   document.getElementById('prev-btn').disabled = current === 0;
   document.getElementById('next-btn').disabled = current === TOTAL-1;
   document.getElementById('progress-fill').style.width = `${(current/(TOTAL-1))*100}%`;
+  
+  // Sync the dropdown menu
+  let dropdownValue = "0";
+  if (current >= 1 && current <= 2) dropdownValue = "1";
+  else if (current >= 3 && current <= 4) dropdownValue = "3";
+  else if (current >= 5 && current <= 6) dropdownValue = "5";
+  else if (current >= 7 && current <= 8) dropdownValue = "7";
+  else if (current >= 9 && current <= 10) dropdownValue = "9";
+  else if (current >= 11 && current <= 12) dropdownValue = "11";
+  else if (current === 13) dropdownValue = "13";
+  document.getElementById('chapter-select').value = dropdownValue;
 }
 
 function goTo(n) {
@@ -969,9 +902,7 @@ document.addEventListener('keydown', e => {
   if (e.key==='ArrowLeft'||e.key==='ArrowUp') prevSlide();
 });
 
-// ════════════════════════════════════════════════════════
 // RESPONSIVE SCALING
-// ════════════════════════════════════════════════════════
 function scaleSlides() {
   const sw = document.getElementById('scale-wrap');
   const W = 1100, H = 680;
@@ -983,9 +914,7 @@ function scaleSlides() {
 window.addEventListener('resize', scaleSlides);
 scaleSlides();
 
-// ════════════════════════════════════════════════════════
-// SLIDE 1 — CH1 DICE PREVIEW
-// ════════════════════════════════════════════════════════
+// CH1 DICE
 function initSlide1() {
   const el = document.getElementById('ch1-dice-preview');
   if (!el || el.childElementCount > 0) return;
@@ -1006,11 +935,8 @@ function initSlide1() {
   });
 }
 
-// ════════════════════════════════════════════════════════
 // SLIDE 2 — COIN FLIP
-// ════════════════════════════════════════════════════════
 let coinH=0, coinT=0;
-
 function doFlip() {
   const coin = document.getElementById('coin-display');
   coin.classList.remove('flip-anim');
@@ -1039,9 +965,7 @@ function drawCoinBars() {
   const yS = d3.scaleLinear().domain([0,1]).range([h-40,10]);
   data.forEach((d,i)=>{
     const x=startX+i*(bw*2+gap+30);
-    // observed bar
     svg.append('rect').attr('x',x).attr('y',yS(d.obs)).attr('width',bw).attr('height',yS(0)-yS(d.obs)).attr('fill',d.color).attr('opacity',.85).attr('rx',2);
-    // theoretical line
     svg.append('line').attr('x1',x-5).attr('x2',x+bw+5).attr('y1',yS(.5)).attr('y2',yS(.5)).attr('stroke','rgba(13,13,13,0.4)').attr('stroke-width',1.5).attr('stroke-dasharray','4,3');
     svg.append('text').attr('x',x+bw/2).attr('y',h-14).attr('text-anchor','middle').attr('font-size',11).attr('fill','rgba(13,13,13,0.5)').text(d.label);
     svg.append('text').attr('x',x+bw/2).attr('y',yS(d.obs)-6).attr('text-anchor','middle').attr('font-size',12).attr('fill',d.color).attr('font-weight','600').text((d.obs*100).toFixed(1)+'%');
@@ -1055,16 +979,12 @@ function initSlide2() {
     let c=0; const t=setInterval(()=>{ doFlip(); if(++c===100) clearInterval(t); },20);
   };
   document.getElementById('flip-reset').onclick = () => {
-    coinH=0; coinT=0;
-    document.getElementById('coin-display').textContent='🪙';
-    updateCoinViz();
+    coinH=0; coinT=0; document.getElementById('coin-display').textContent='🪙'; updateCoinViz();
   };
   drawCoinBars();
 }
 
-// ════════════════════════════════════════════════════════
-// SLIDE 3 — CH2 VENN PREVIEW
-// ════════════════════════════════════════════════════════
+// CH2 VENN PREVIEW
 function initSlide3() {
   const el = document.getElementById('ch2-venn-preview');
   if (!el || el.childElementCount > 0) return;
@@ -1072,19 +992,14 @@ function initSlide3() {
   const svg = d3.select(el).append('svg').attr('width',w).attr('height',h);
   const cx=w/2,cy=h/2,r=90,d=45;
   const sets=[{x:cx-d,y:cy-d*.6,c:'var(--accent2)'},{x:cx+d,y:cy-d*.6,c:'var(--accent2)'},{x:cx,y:cy+d*.6,c:'var(--accent2)'}];
-  sets.forEach(s=>{
-    svg.append('circle').attr('cx',s.x).attr('cy',s.y).attr('r',r).attr('fill',s.c).attr('fill-opacity',.15).attr('stroke',s.c).attr('stroke-width',1.5);
-  });
+  sets.forEach(s=>{ svg.append('circle').attr('cx',s.x).attr('cy',s.y).attr('r',r).attr('fill',s.c).attr('fill-opacity',.15).attr('stroke',s.c).attr('stroke-width',1.5); });
   ['A','B','C'].forEach((l,i)=>{
-    const angles=[210,330,90]; const dist=r*.75;
-    const rad=angles[i]*Math.PI/180;
+    const angles=[210,330,90]; const dist=r*.75; const rad=angles[i]*Math.PI/180;
     svg.append('text').attr('x',sets[i].x+Math.cos(rad)*dist).attr('y',sets[i].y+Math.sin(rad)*dist).attr('text-anchor','middle').attr('dominant-baseline','middle').attr('font-size',22).attr('font-weight','700').attr('font-family','Playfair Display,serif').attr('fill','var(--accent2)').attr('opacity',.7).text(l);
   });
 }
 
-// ════════════════════════════════════════════════════════
-// SLIDE 4 — VENN INTERACTIVE
-// ════════════════════════════════════════════════════════
+// SLIDE 4 — VENN
 function initSlide4() {
   const el = document.getElementById('venn-svg-wrap');
   if (el.childElementCount > 0) return;
@@ -1092,24 +1007,24 @@ function initSlide4() {
   const svg = d3.select(el).append('svg').attr('width',w).attr('height',h);
   const cx=w/2, cy=h/2, r=110, d=55;
   const sets=[
-    {id:'A',x:cx-d,y:cy-d*.6,c:'var(--accent2)',label:'A'},
-    {id:'B',x:cx+d,y:cy-d*.6,c:'var(--accent2)',label:'B'},
-    {id:'C',x:cx,y:cy+d*.6,c:'var(--accent2)',label:'C'}
+    {id:'A',x:cx-d,y:cy-d*.6,c:'var(--accent2)',label:'Netflix'},
+    {id:'B',x:cx+d,y:cy-d*.6,c:'var(--accent2)',label:'Hulu'},
+    {id:'C',x:cx,y:cy+d*.6,c:'var(--accent2)',label:'Prime'}
   ];
   const defs = svg.append('defs');
-  sets.forEach(s=>{
-    defs.append('clipPath').attr('id','cp'+s.id).append('circle').attr('cx',s.x).attr('cy',s.y).attr('r',r);
-  });
+  sets.forEach(s=>{ defs.append('clipPath').attr('id','cp'+s.id).append('circle').attr('cx',s.x).attr('cy',s.y).attr('r',r); });
+  
   const regions=[
-    {id:'rA',clips:['A'],label:'A only',desc:'P(A∩Bᶜ∩Cᶜ)'},
-    {id:'rB',clips:['B'],label:'B only',desc:'P(B∩Aᶜ∩Cᶜ)'},
-    {id:'rC',clips:['C'],label:'C only',desc:'P(C∩Aᶜ∩Bᶜ)'},
-    {id:'rAB',clips:['A','B'],label:'A∩B',desc:'P(A∩B)'},
-    {id:'rAC',clips:['A','C'],label:'A∩C',desc:'P(A∩C)'},
-    {id:'rBC',clips:['B','C'],label:'B∩C',desc:'P(B∩C)'},
-    {id:'rABC',clips:['A','B','C'],label:'A∩B∩C',desc:'P(A∩B∩C)'},
+    {id:'rA',clips:['A'],label:'Netflix only',desc:'Exclusively Netflix'},
+    {id:'rB',clips:['B'],label:'Hulu only',desc:'Exclusively Hulu'},
+    {id:'rC',clips:['C'],label:'Prime only',desc:'Exclusively Prime Video'},
+    {id:'rAB',clips:['A','B'],label:'Netflix & Hulu',desc:'Intersection of Netflix and Hulu'},
+    {id:'rAC',clips:['A','C'],label:'Netflix & Prime',desc:'Intersection of Netflix and Prime'},
+    {id:'rBC',clips:['B','C'],label:'Hulu & Prime',desc:'Intersection of Hulu and Prime'},
+    {id:'rABC',clips:['A','B','C'],label:'All Three',desc:'Pays for all three services! P(A∩B∩C)'},
   ];
   const colors=['var(--accent2)','var(--accent3)','var(--accent1)','var(--accent4)','var(--accent5)','#0891b2','#e11d48'];
+  
   regions.forEach((reg,ri)=>{
     let g = svg.append('g');
     reg.clips.forEach(id=>{ const inner=g; g=svg.append('g').attr('clip-path',`url(#cp${id})`); });
@@ -1119,18 +1034,17 @@ function initSlide4() {
       .on('mouseover',function(){ d3.select(this).attr('fill-opacity',0.35); updateVennInfo(reg.label,reg.desc); })
       .on('mouseout',function(){ if(!d3.select(this).classed('venn-locked')) d3.select(this).attr('fill-opacity',0); });
   });
-  sets.forEach(s=>{
-    svg.append('circle').attr('cx',s.x).attr('cy',s.y).attr('r',r).attr('fill','none').attr('stroke',s.c).attr('stroke-width',2).attr('opacity',.7);
-  });
-  const angles=[200,340,90]; const dist=r*.78;
+  
+  sets.forEach(s=>{ svg.append('circle').attr('cx',s.x).attr('cy',s.y).attr('r',r).attr('fill','none').attr('stroke',s.c).attr('stroke-width',2).attr('opacity',.7); });
+  
+  const angles=[200,340,90]; const dist=r*.85;
   sets.forEach((s,i)=>{
     const rad=angles[i]*Math.PI/180;
-    svg.append('text').attr('x',s.x+Math.cos(rad)*dist).attr('y',s.y+Math.sin(rad)*dist).attr('text-anchor','middle').attr('dominant-baseline','middle').attr('font-size',24).attr('font-weight','700').attr('font-family','Playfair Display,serif').attr('fill','var(--accent2)').text(s.label);
+    svg.append('text').attr('x',s.x+Math.cos(rad)*dist).attr('y',s.y+Math.sin(rad)*dist).attr('text-anchor','middle').attr('dominant-baseline','middle').attr('font-size',18).attr('font-weight','700').attr('font-family','Playfair Display,serif').attr('fill','var(--accent2)').text(s.label);
   });
-  // info label
-  svg.append('text').attr('id','venn-info-label').attr('x',w/2).attr('y',h-20).attr('text-anchor','middle').attr('font-size',13).attr('fill','rgba(13,13,13,0.6)').attr('font-weight','500').text('Hover regions to explore');
   
-  // buttons
+  svg.append('text').attr('id','venn-info-label').attr('x',w/2).attr('y',h-20).attr('text-anchor','middle').attr('font-size',13).attr('fill','rgba(13,13,13,0.6)').attr('font-weight','500').text('Hover regions to explore demographics');
+  
   const btnsEl = document.getElementById('venn-btns');
   btnsEl.innerHTML='';
   regions.forEach((r,ri)=>{
@@ -1149,9 +1063,7 @@ function updateVennInfo(label,desc){
 }
 function highlightVenn(label,desc){ updateVennInfo(label,desc); }
 
-// ════════════════════════════════════════════════════════
-// SLIDE 5 — CH3 DIST PREVIEW
-// ════════════════════════════════════════════════════════
+// CH3 DIST PREVIEW
 function initSlide5() {
   const el = document.getElementById('ch3-dist-preview');
   if (!el || el.childElementCount>0) return;
@@ -1169,11 +1081,8 @@ function initSlide5() {
   svg.append('text').attr('x',w/2).attr('y',h-10).attr('text-anchor','middle').attr('font-size',11).attr('fill','rgba(13,13,13,0.4)').text('Normal Distribution N(0,1)');
 }
 
-// ════════════════════════════════════════════════════════
-// SLIDE 6 — DISTRIBUTIONS INTERACTIVE
-// ════════════════════════════════════════════════════════
+// SLIDE 6 — DISTRIBUTIONS
 let distType='normal';
-
 function drawDist() {
   const el = document.getElementById('dist-svg-wrap');
   el.innerHTML='';
@@ -1187,8 +1096,7 @@ function drawDist() {
 
   let xdom, ymax, pdfFn;
   if(distType==='normal'){
-    xdom=[mu-4*sigma, mu+4*sigma];
-    ymax=0.42/sigma*1.1;
+    xdom=[mu-4*sigma, mu+4*sigma]; ymax=0.42/sigma*1.1;
     pdfFn=x=>Math.exp(-.5*((x-mu)/sigma)**2)/(sigma*Math.sqrt(2*Math.PI));
   } else if(distType==='uniform'){
     const a=mu-sigma*Math.sqrt(3), b=mu+sigma*Math.sqrt(3);
@@ -1196,15 +1104,13 @@ function drawDist() {
     pdfFn=x=>(x>=a&&x<=b)?1/(b-a):0;
   } else {
     const lam=1/Math.max(sigma,.01);
-    xdom=[0, Math.max(8,mu+5*sigma)];
-    ymax=lam*1.2;
+    xdom=[0, Math.max(8,mu+5*sigma)]; ymax=lam*1.2;
     pdfFn=x=>x>=0?lam*Math.exp(-lam*x):0;
   }
 
   const xS=d3.scaleLinear().domain(xdom).range([0,iw]);
   const yS=d3.scaleLinear().domain([0,ymax]).range([ih,0]);
 
-  // axes
   g.append('g').attr('transform',`translate(0,${ih})`).call(d3.axisBottom(xS).ticks(6).tickSize(3)).call(a=>a.select('.domain').attr('stroke','rgba(13,13,13,0.2)').call(t=>t.selectAll('text').attr('font-size',10).attr('fill','rgba(13,13,13,0.4)')));
   g.append('g').call(d3.axisLeft(yS).ticks(4).tickSize(3)).call(a=>a.select('.domain').attr('stroke','rgba(13,13,13,0.2)').call(t=>t.selectAll('text').attr('font-size',10).attr('fill','rgba(13,13,13,0.4)')));
 
@@ -1217,13 +1123,10 @@ function drawDist() {
   g.append('path').datum(pts).attr('d',area).attr('fill','var(--accent3)').attr('fill-opacity',.2);
   g.append('path').datum(pts).attr('d',line).attr('fill','none').attr('stroke','var(--accent3)').attr('stroke-width',2.5);
 
-  // mean line
   if(distType!=='uniform') {
     g.append('line').attr('x1',xS(mu)).attr('x2',xS(mu)).attr('y1',0).attr('y2',ih).attr('stroke','var(--accent1)').attr('stroke-width',1.5).attr('stroke-dasharray','5,3');
     g.append('text').attr('x',xS(mu)+5).attr('y',20).attr('font-size',10).attr('fill','var(--accent1)').text('μ='+mu.toFixed(1));
   }
-
-  // ±1σ shading
   if(distType==='normal'){
     const shade=d3.range(100).map(i=>{const x=mu-sigma+(2*sigma*i/99);return{x,y:pdfFn(x)};});
     g.append('path').datum(shade).attr('d',area).attr('fill','var(--accent3)').attr('fill-opacity',.25);
@@ -1234,10 +1137,8 @@ function drawDist() {
 function initSlide6() {
   ['mu-slider','sigma-slider'].forEach(id=>{
     document.getElementById(id).addEventListener('input', function(){
-      document.getElementById(id.replace('slider','val')).textContent = (+this.value).toFixed(1);
-      drawDist();
+      document.getElementById(id.replace('slider','val')).textContent = (+this.value).toFixed(1); drawDist();
     });
-    document.getElementById(id).style.accentColor='var(--accent3)';
   });
   document.querySelectorAll('.dist-type-btn').forEach(btn=>{
     btn.addEventListener('click',function(){
@@ -1253,9 +1154,7 @@ function initSlide6() {
   drawDist();
 }
 
-// ════════════════════════════════════════════════════════
-// SLIDE 7 — CH4 CI PREVIEW
-// ════════════════════════════════════════════════════════
+// CH4 CI PREVIEW
 function initSlide7() {
   const el = document.getElementById('ch4-ci-preview');
   if (!el || el.childElementCount>0) return;
@@ -1263,26 +1162,20 @@ function initSlide7() {
   const svg=d3.select(el).append('svg').attr('width',w).attr('height',h);
   const mu=0;
   const intervals=[...Array(12)].map((_,i)=>{
-    const m=mu+(Math.random()-.5)*.8;
-    const hw=.5+Math.random()*.4;
-    return{m,lo:m-hw,hi:m+hw,hit:m-hw<=mu&&m+hw>=mu};
+    const m=mu+(Math.random()-.5)*.8; const hw=.5+Math.random()*.4; return{m,lo:m-hw,hi:m+hw,hit:m-hw<=mu&&m+hw>=mu};
   });
   const xS=d3.scaleLinear().domain([-2,2]).range([30,w-20]);
   const yS=d3.scaleLinear().domain([0,12]).range([20,h-20]);
   svg.append('line').attr('x1',xS(mu)).attr('x2',xS(mu)).attr('y1',15).attr('y2',h-15).attr('stroke','var(--accent4)').attr('stroke-width',1.5).attr('stroke-dasharray','5,3');
   intervals.forEach((iv,i)=>{
-    const y=yS(i+.5);
-    const c=iv.hit?'var(--accent4)':'var(--accent1)';
+    const y=yS(i+.5); const c=iv.hit?'var(--accent4)':'var(--accent1)';
     svg.append('line').attr('x1',xS(iv.lo)).attr('x2',xS(iv.hi)).attr('y1',y).attr('y2',y).attr('stroke',c).attr('stroke-width',2);
     svg.append('circle').attr('cx',xS(iv.m)).attr('cy',y).attr('r',3).attr('fill',c);
   });
 }
 
-// ════════════════════════════════════════════════════════
 // SLIDE 8 — CONFIDENCE INTERVALS
-// ════════════════════════════════════════════════════════
 let ciIntervals=[], ciHit=0;
-
 function drawCI(){
   const el=document.getElementById('ci-svg-wrap');
   el.innerHTML='';
@@ -1292,10 +1185,9 @@ function drawCI(){
   const yS=d3.scaleLinear().domain([0,Math.max(ciIntervals.length+1,5)]).range([20,h-20]);
   const svg=d3.select(el).append('svg').attr('width',w).attr('height',h);
   svg.append('line').attr('x1',xS(mu)).attr('x2',xS(mu)).attr('y1',10).attr('y2',h-10).attr('stroke','var(--accent4)').attr('stroke-width',2).attr('stroke-dasharray','6,4');
-  svg.append('text').attr('x',xS(mu)+6).attr('y',20).attr('font-size',10).attr('fill','var(--accent4)').text('μ=0');
+  svg.append('text').attr('x',xS(mu)+6).attr('y',20).attr('font-size',10).attr('fill','var(--accent4)').text('True Mean (μ)');
   ciIntervals.forEach((iv,i)=>{
-    const y=yS(i+.5);
-    const c=iv.hit?'var(--accent3)':'var(--accent1)';
+    const y=yS(i+.5); const c=iv.hit?'var(--accent3)':'var(--accent1)';
     svg.append('line').attr('x1',xS(iv.lo)).attr('x2',xS(iv.hi)).attr('y1',y).attr('y2',y).attr('stroke',c).attr('stroke-width',1.8).attr('opacity',.9);
     svg.append('circle').attr('cx',xS(iv.m)).attr('cy',y).attr('r',2.5).attr('fill',c);
   });
@@ -1324,9 +1216,7 @@ function initSlide8(){
   drawCI();
 }
 
-// ════════════════════════════════════════════════════════
-// SLIDE 9 — CH5 BAYES PREVIEW
-// ════════════════════════════════════════════════════════
+// CH5 BAYES PREVIEW
 function initSlide9() {
   const el=document.getElementById('ch5-bayes-preview');
   if(!el||el.childElementCount>0) return;
@@ -1349,11 +1239,8 @@ function initSlide9() {
   svg.append('text').attr('x',w/2).attr('y',h-5).attr('text-anchor','middle').attr('font-size',10).attr('fill','rgba(13,13,13,0.4)').text('Prior → Likelihood → Posterior');
 }
 
-// ════════════════════════════════════════════════════════
-// SLIDE 10 — BAYES INTERACTIVE
-// ════════════════════════════════════════════════════════
+// SLIDE 10 — BAYES
 let bayesH=0, bayesT=0;
-
 function lgamma(x){let r=0;const c=[76.18009172947146,-86.50532032941677,24.01409824083091,-1.231739572450155,0.1208650973866179e-2,-0.5395239384953e-5];for(let i=0;i<6;i++)r+=c[i]/(x+i+1);return Math.log(2.5066282746310005*(1+r/x))+(x+.5)*Math.log(x+5.5)-(x+5.5);}
 function betaPdf(x,a,b){if(x<=0||x>=1)return 0;const lb=lgamma(a)+lgamma(b)-lgamma(a+b);return Math.exp((a-1)*Math.log(x)+(b-1)*Math.log(1-x)-lb);}
 
@@ -1361,7 +1248,7 @@ function drawBayes(){
   const el=document.getElementById('bayes-svg-wrap');
   el.innerHTML='';
   const w=el.clientWidth||420, h=el.clientHeight||320;
-  const a0=1,b0=1; // uniform prior
+  const a0=1,b0=1; 
   const aPost=a0+bayesH, bPost=b0+bayesT;
   const svg=d3.select(el).append('svg').attr('width',w).attr('height',h);
   const pad={left:40,right:20,top:20,bottom:35};
@@ -1376,23 +1263,22 @@ function drawBayes(){
   g.append('g').call(d3.axisLeft(yS).ticks(4).tickSize(3)).call(a=>{ a.select('.domain').attr('stroke','rgba(13,13,13,0.2)'); a.selectAll('text').attr('font-size',10).attr('fill','rgba(13,13,13,0.4)'); });
   const area=d3.area().x(d=>xS(d.x)).y0(yS(0)).y1(d=>yS(d.y)).curve(d3.curveBasis);
   const line=d3.line().x(d=>xS(d.x)).y(d=>yS(d.y)).curve(d3.curveBasis);
-  // prior
+  
   g.append('path').datum(priorPts).attr('d',line).attr('fill','none').attr('stroke','rgba(124,58,237,0.25)').attr('stroke-width',1.5).attr('stroke-dasharray','4,3');
-  // posterior
   g.append('path').datum(postPts).attr('d',area).attr('fill','var(--accent5)').attr('fill-opacity',.18);
   g.append('path').datum(postPts).attr('d',line).attr('fill','none').attr('stroke','var(--accent5)').attr('stroke-width',2.5);
-  // MAP
+  
   const map=postPts.reduce((a,b)=>b.y>a.y?b:a);
   g.append('line').attr('x1',xS(map.x)).attr('x2',xS(map.x)).attr('y1',0).attr('y2',ih).attr('stroke','var(--accent3)').attr('stroke-width',1.5).attr('stroke-dasharray','4,3');
-  g.append('text').attr('x',xS(map.x)+5).attr('y',24).attr('font-size',10).attr('fill','var(--accent3)').text('MAP='+map.x.toFixed(2));
-  // true p
+  g.append('text').attr('x',xS(map.x)+5).attr('y',24).attr('font-size',10).attr('fill','var(--accent3)').text('Best Guess='+map.x.toFixed(2));
+  
   const trueP=+document.getElementById('true-p-slider').value;
   g.append('line').attr('x1',xS(trueP)).attr('x2',xS(trueP)).attr('y1',0).attr('y2',ih).attr('stroke','var(--accent1)').attr('stroke-width',1.5).attr('stroke-dasharray','2,2').attr('opacity',.6);
   g.append('text').attr('x',xS(trueP)+5).attr('y',40).attr('font-size',9).attr('fill','var(--accent1)').attr('opacity',.6).text('true p='+trueP);
-  // labels
+  
   g.append('text').attr('x',10).attr('y',12).attr('font-size',9).attr('fill','rgba(124,58,237,0.4)').text('Prior (flat)');
-  g.append('text').attr('x',10).attr('y',26).attr('font-size',9).attr('fill','var(--accent5)').text(`Posterior Beta(${aPost},${bPost})`);
-  g.append('text').attr('x',iw/2).attr('y',ih+28).attr('text-anchor','middle').attr('font-size',10).attr('fill','rgba(13,13,13,0.4)').text('Bias θ (probability of heads)');
+  g.append('text').attr('x',10).attr('y',26).attr('font-size',9).attr('fill','var(--accent5)').text(`Posterior Belief`);
+  g.append('text').attr('x',iw/2).attr('y',ih+28).attr('text-anchor','middle').attr('font-size',10).attr('fill','rgba(13,13,13,0.4)').text('Coin Bias (probability of heads)');
   document.getElementById('bayes-map').textContent=map.x.toFixed(2);
   document.getElementById('bayes-n').textContent=bayesH+bayesT;
 }
@@ -1405,8 +1291,7 @@ function doBayesFlip(){
 
 function initSlide10(){
   document.getElementById('true-p-slider').addEventListener('input',function(){
-    document.getElementById('true-p-val').textContent=(+this.value).toFixed(2);
-    drawBayes();
+    document.getElementById('true-p-val').textContent=(+this.value).toFixed(2); drawBayes();
   });
   document.getElementById('bayes-flip-1').onclick=()=>doBayesFlip();
   document.getElementById('bayes-flip-10').onclick=()=>{ for(let i=0;i<10;i++) doBayesFlip(); };
@@ -1414,9 +1299,7 @@ function initSlide10(){
   drawBayes();
 }
 
-// ════════════════════════════════════════════════════════
-// SLIDE 11 — CH6 REG PREVIEW
-// ════════════════════════════════════════════════════════
+// CH6 REG PREVIEW
 function initSlide11(){
   const el=document.getElementById('ch6-reg-preview');
   if(!el||el.childElementCount>0) return;
@@ -1431,24 +1314,19 @@ function initSlide11(){
   svg.selectAll('circle').data(pts).enter().append('circle').attr('cx',d=>xS(d.x)).attr('cy',d=>yS(d.y)).attr('r',4).attr('fill','#0891b2').attr('fill-opacity',.6);
 }
 
-// ════════════════════════════════════════════════════════
-// SLIDE 12 — REGRESSION INTERACTIVE
-// ════════════════════════════════════════════════════════
+// SLIDE 12 — REGRESSION
 function ols(xs,ys){
   const n=xs.length; if(!n) return{slope:0,inter:0,r2:0,r:0};
   const mx=xs.reduce((a,b)=>a+b)/n, my=ys.reduce((a,b)=>a+b)/n;
   const cov=xs.reduce((a,x,i)=>a+(x-mx)*(ys[i]-my),0)/n;
   const varx=xs.reduce((a,x)=>a+(x-mx)**2,0)/n;
   const vary=ys.reduce((a,y)=>a+(y-my)**2,0)/n;
-  const slope=varx?cov/varx:0;
-  const inter=my-slope*mx;
-  const r2=vary?cov**2/(varx*vary):0;
-  const r=vary&&varx?cov/Math.sqrt(varx*vary):0;
+  const slope=varx?cov/varx:0; const inter=my-slope*mx;
+  const r2=vary?cov**2/(varx*vary):0; const r=vary&&varx?cov/Math.sqrt(varx*vary):0;
   return{slope,inter,r2,r};
 }
 
 let regPts=[];
-
 function genRegData(){
   regPts=d3.range(12).map(()=>({x:1+Math.random()*8,y:0}));
   regPts.forEach(p=>{ p.y=p.x*.8+2+d3.randomNormal(0,1.2)(); p.y=Math.max(.5,Math.min(9.5,p.y)); });
@@ -1464,18 +1342,24 @@ function drawReg(){
   const g=svg.append('g').attr('transform',`translate(${pad.left},${pad.top})`);
   const xS=d3.scaleLinear().domain([0,10]).range([0,iw]);
   const yS=d3.scaleLinear().domain([0,10]).range([ih,0]);
+  
   g.append('g').attr('transform',`translate(0,${ih})`).call(d3.axisBottom(xS).ticks(5).tickSize(3)).call(a=>{a.select('.domain').attr('stroke','rgba(13,13,13,0.2)');a.selectAll('text').attr('font-size',10).attr('fill','rgba(13,13,13,0.4)');});
   g.append('g').call(d3.axisLeft(yS).ticks(5).tickSize(3)).call(a=>{a.select('.domain').attr('stroke','rgba(13,13,13,0.2)');a.selectAll('text').attr('font-size',10).attr('fill','rgba(13,13,13,0.4)');});
+  
+  // Custom Axis Labels
+  g.append('text').attr('x',iw/2).attr('y',ih+30).attr('text-anchor','middle').attr('font-size',12).attr('fill','rgba(13,13,13,0.6)').text('Square Footage');
+  g.append('text').attr('x',-ih/2).attr('y',-28).attr('transform','rotate(-90)').attr('text-anchor','middle').attr('font-size',12).attr('fill','rgba(13,13,13,0.6)').text('Rent Price');
+
   if(!regPts.length) return;
   const {slope,inter,r2,r}=ols(regPts.map(p=>p.x),regPts.map(p=>p.y));
-  // residuals
+  
   regPts.forEach(p=>{
     const yhat=inter+slope*p.x;
     g.append('line').attr('x1',xS(p.x)).attr('x2',xS(p.x)).attr('y1',yS(p.y)).attr('y2',yS(yhat)).attr('stroke','rgba(13,13,13,0.15)').attr('stroke-width',1);
   });
-  // reg line
+  
   g.append('line').attr('x1',xS(0)).attr('x2',xS(10)).attr('y1',yS(inter)).attr('y2',yS(inter+slope*10)).attr('stroke','#0891b2').attr('stroke-width',2.5);
-  // points (draggable)
+  
   g.selectAll('circle.pt').data(regPts).enter().append('circle').attr('class','pt')
     .attr('cx',d=>xS(d.x)).attr('cy',d=>yS(d.y)).attr('r',6)
     .attr('fill','#0891b2').attr('fill-opacity',.75).attr('stroke','white').attr('stroke-width',1.5)
@@ -1484,8 +1368,7 @@ function drawReg(){
       .on('drag',function(event,d){
         const newX=Math.max(0,Math.min(10,xS.invert(event.x)));
         const newY=Math.max(0,Math.min(10,yS.invert(event.y)));
-        d.x=newX; d.y=newY;
-        drawReg();
+        d.x=newX; d.y=newY; drawReg();
       })
     );
   document.getElementById('reg-r2').textContent=r2.toFixed(3);
@@ -1496,42 +1379,25 @@ function drawReg(){
 
 function initSlide12(){
   genRegData();
-  document.getElementById('reg-add-point').onclick=()=>{
-    regPts.push({x:1+Math.random()*8, y:1+Math.random()*8});
-    drawReg();
-  };
+  document.getElementById('reg-add-point').onclick=()=>{ regPts.push({x:1+Math.random()*8, y:1+Math.random()*8}); drawReg(); };
   document.getElementById('reg-reset').onclick=()=>{ genRegData(); drawReg(); };
   drawReg();
 }
 
-// ════════════════════════════════════════════════════════
 // SLIDE INIT DISPATCHER
-// ════════════════════════════════════════════════════════
 function initSlide(n){
   if(initialized[n]) return;
   initialized[n]=true;
   switch(n){
-    case 1: initSlide1(); break;
-    case 2: initSlide2(); break;
-    case 3: initSlide3(); break;
-    case 4: initSlide4(); break;
-    case 5: initSlide5(); break;
-    case 6: initSlide6(); break;
-    case 7: initSlide7(); break;
-    case 8: initSlide8(); break;
-    case 9: initSlide9(); break;
-    case 10: initSlide10(); break;
-    case 11: initSlide11(); break;
-    case 12: initSlide12(); break;
+    case 1: initSlide1(); break; case 2: initSlide2(); break; case 3: initSlide3(); break;
+    case 4: initSlide4(); break; case 5: initSlide5(); break; case 6: initSlide6(); break;
+    case 7: initSlide7(); break; case 8: initSlide8(); break; case 9: initSlide9(); break;
+    case 10: initSlide10(); break; case 11: initSlide11(); break; case 12: initSlide12(); break;
   }
 }
 
-// ════════════════════════════════════════════════════════
 // BOOT
-// ════════════════════════════════════════════════════════
-buildNav();
-updateNav();
-initSlide(0);
+buildNav(); updateNav(); initSlide(0);
 </script>
 </body>
 </html>
